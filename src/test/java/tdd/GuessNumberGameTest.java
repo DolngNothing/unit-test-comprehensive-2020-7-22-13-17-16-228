@@ -10,7 +10,7 @@ public class GuessNumberGameTest {
         //given
         String guessNumber="1234";
         //when
-        GuessNumberGame guessNumberGame = new GuessNumberGame();
+        GuessNumberGame guessNumberGame = new GuessNumberGame(guessNumber);
         String guessResult=guessNumberGame.guess(guessNumber);
         //should
 
