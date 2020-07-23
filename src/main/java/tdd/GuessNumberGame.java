@@ -63,7 +63,6 @@ public class GuessNumberGame {
     public static void main(String[] args) {
         Integer i=11;
         Integer j=11;
-
         System.out.println(i==++j);
     }
 }
