@@ -66,4 +66,5 @@ public class GuessNumberGame {
         boolean isRepeat = count < guessList.size();
         return isRepeat;
     }
+
 }
