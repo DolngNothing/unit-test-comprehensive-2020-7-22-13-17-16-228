@@ -24,6 +24,7 @@ public class GuessNumberGame {
 
         if(isNumberRepeat(guessList)) return "Wrong Input，Input again";
 
+
         Integer existNumber = countExistNumber(guessList,answerList);
         Integer rightPosition = countRightPosition(guessList,answerList);
 
