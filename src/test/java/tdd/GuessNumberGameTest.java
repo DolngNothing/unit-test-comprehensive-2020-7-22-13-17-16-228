@@ -72,4 +72,15 @@ public class GuessNumberGameTest {
         //should
         assertEquals("0A0B",guessResult);
     }
+
+    @Test
+    void should_return_Wrong_Input_Input_again_when_answer_is_1234_given_1122(){
+        //given
+        String guessNumber="1122";
+        //when
+        GuessNumberGame guessNumberGame = new GuessNumberGame(answer);
+        String guessResult=guessNumberGame.guess(guessNumber);
+        //should
+        assertEquals("Wrong Input，Input again",guessResult);
+    }
 }
