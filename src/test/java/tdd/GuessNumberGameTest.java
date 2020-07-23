@@ -48,6 +48,6 @@ public class GuessNumberGameTest {
         GuessNumberGame guessNumberGame = new GuessNumberGame(answer);
         String guessResult=guessNumberGame.guess(guessNumber);
         //should
-        assertEquals("0A4B",guessResult);
+        assertEquals("1A1B",guessResult);
     }
 }
