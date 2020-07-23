@@ -29,4 +29,16 @@ public class GuessNumberGameTest {
         //should
         assertEquals("2A2B",guessResult);
     }
+
+    @Test
+    void should_return_0A4B_when_answer_is_1234_given_4321(){
+        //given
+        String guessNumber="4321";
+        String answer="1234";
+        //when
+        GuessNumberGame guessNumberGame = new GuessNumberGame(answer);
+        String guessResult=guessNumberGame.guess(guessNumber);
+        //should
+        assertEquals("0A4B",guessResult);
+    }
 }
