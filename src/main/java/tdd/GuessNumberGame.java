@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GuessNumberGame {
+    public static final String WRONG_INPUT_INPUT_AGAIN = "Wrong Input，Input again";
     private String guessAnswer;
 
     public GuessNumberGame(AnswerGenerator answerGenerator){
@@ -14,7 +15,7 @@ public class GuessNumberGame {
         List<Integer> guessList = convertIntoList(guessNumber);
         List<Integer> answerList = convertIntoList(this.guessAnswer);
 
-        if(isNumberRepeatOrless(guessList)) return "Wrong Input，Input again";
+        if(isNumberRepeatOrless(guessList)) return WRONG_INPUT_INPUT_AGAIN;
 
         Integer existNumber = countExistNumber(guessList,answerList);
         Integer rightPosition = countRightPosition(guessList,answerList);
