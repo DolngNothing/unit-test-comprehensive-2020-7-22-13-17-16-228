@@ -7,6 +7,8 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.BDDMockito.given;
 
 class GuessNumberGameTest {
+    private static final String WRONG_INPUT_INPUT_AGAIN = "Wrong Input，Input again";
+
     @Test
     void should_return_4A0B_when_answer_is_1234_given_1234(){
         //given
@@ -95,7 +97,7 @@ class GuessNumberGameTest {
         GuessNumberGame guessNumberGame = new GuessNumberGame(answerGenerator);
         String guessResult=guessNumberGame.guess(guessNumber);
         //should
-        assertEquals("Wrong Input，Input again",guessResult);
+        assertEquals(WRONG_INPUT_INPUT_AGAIN,guessResult);
     }
 
     @Test
@@ -108,6 +110,6 @@ class GuessNumberGameTest {
         GuessNumberGame guessNumberGame = new GuessNumberGame(answerGenerator);
         String guessResult=guessNumberGame.guess(guessNumber);
         //should
-        assertEquals("Wrong Input，Input again",guessResult);
+        assertEquals(WRONG_INPUT_INPUT_AGAIN,guessResult);
     }
 }
