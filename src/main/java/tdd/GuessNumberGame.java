@@ -30,7 +30,7 @@ public class GuessNumberGame {
         return (rightPosition)+"A"+(existNumber-rightPosition)+"B";
     }
 
-    public List<Integer> convertIntoList(String number){
+    private List<Integer> convertIntoList(String number){
         List<Integer> numbers=new ArrayList<Integer>();
         char[] numberArray= number.toCharArray();
         for(char numberChar:numberArray){
@@ -39,7 +39,7 @@ public class GuessNumberGame {
         return numbers;
     }
 
-    public Integer countExistNumber(List<Integer> guessList,List<Integer> answerList){
+    private Integer countExistNumber(List<Integer> guessList, List<Integer> answerList){
         Integer count=0;
         for(Integer guessNum:guessList){
             if(answerList.contains(guessNum)){
@@ -49,7 +49,7 @@ public class GuessNumberGame {
         return count;
     }
 
-    public Integer countRightPosition(List<Integer> guessList,List<Integer> answerList){
+    private Integer countRightPosition(List<Integer> guessList, List<Integer> answerList){
         Integer count=0;
         for(int i=0;i<guessList.size();i++){
             if(guessList.get(i).equals(answerList.get(i))){
@@ -59,7 +59,7 @@ public class GuessNumberGame {
         return count;
     }
 
-    public Boolean isNumberRepeatOrless(List<Integer> guessList){
+    private Boolean isNumberRepeatOrless(List<Integer> guessList){
         long count = guessList.stream().distinct().count();
         return count < guessList.size();
     }

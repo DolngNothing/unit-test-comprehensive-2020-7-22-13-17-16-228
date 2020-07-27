@@ -6,7 +6,7 @@ import org.mockito.Mockito;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.BDDMockito.given;
 
-public class GuessNumberGameTest {
+class GuessNumberGameTest {
     String answer="1234";
     @Test
     void should_return_4A0B_when_answer_is_1234_given_1234(){
