@@ -6,8 +6,8 @@ import java.util.List;
 public class GuessNumberGame {
     private String guessAnswer;
 
-    public GuessNumberGame(String guessAnswer){
-        this.guessAnswer=guessAnswer;
+    public GuessNumberGame(AnswerGenerator answerGenerator){
+        this.guessAnswer=answerGenerator.generate();
     }
 
     public String getGuessAnswer() {
