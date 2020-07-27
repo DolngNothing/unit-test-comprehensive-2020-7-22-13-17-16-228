@@ -90,8 +90,10 @@ public class GuessNumberGameTest {
     void should_return_Wrong_Input_Input_again_when_answer_is_1234_given_1122(){
         //given
         String guessNumber="1122";
+        AnswerGenerator answerGenerator= Mockito.mock(AnswerGenerator.class);
+        given(answerGenerator.generate()).willReturn("1234");
         //when
-        GuessNumberGame guessNumberGame = new GuessNumberGame(answer);
+        GuessNumberGame guessNumberGame = new GuessNumberGame(answerGenerator);
         String guessResult=guessNumberGame.guess(guessNumber);
         //should
         assertEquals("Wrong Input，Input again",guessResult);
@@ -101,8 +103,10 @@ public class GuessNumberGameTest {
     void should_return_Wrong_Input_Input_again_when_answer_is_1234_given_112(){
         //given
         String guessNumber="112";
+        AnswerGenerator answerGenerator= Mockito.mock(AnswerGenerator.class);
+        given(answerGenerator.generate()).willReturn("1234");
         //when
-        GuessNumberGame guessNumberGame = new GuessNumberGame(answer);
+        GuessNumberGame guessNumberGame = new GuessNumberGame(answerGenerator);
         String guessResult=guessNumberGame.guess(guessNumber);
         //should
         assertEquals("Wrong Input，Input again",guessResult);
