@@ -8,6 +8,7 @@ import static org.mockito.BDDMockito.given;
 
 class GuessNumberGameTest {
     private static final String WRONG_INPUT_INPUT_AGAIN = "Wrong Input，Input again";
+    private static final String ALL_CORRECT = "4A0B";
 
     @Test
     void should_return_4A0B_when_answer_is_1234_given_1234(){
@@ -19,7 +20,7 @@ class GuessNumberGameTest {
         GuessNumberGame guessNumberGame = new GuessNumberGame(answerGenerator);
         String guessResult=guessNumberGame.guess(guessNumber);
         //should
-        assertEquals("4A0B",guessResult);
+        assertEquals(ALL_CORRECT,guessResult);
     }
 
     @Test
