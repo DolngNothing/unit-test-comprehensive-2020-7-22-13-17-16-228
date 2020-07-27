@@ -17,7 +17,7 @@ public class GuessNumberGame {
         List<Integer> guessList = convertIntoList(guessNumber);
         List<Integer> answerList = convertIntoList(this.guessAnswer);
 
-        if(isNumberRepeatOrless(guessList)) return WRONG_INPUT_INPUT_AGAIN;
+        if(isNumberRepeat(guessList)||isNumberNot4(guessList)) return WRONG_INPUT_INPUT_AGAIN;
 
         Integer existNumber = countExistNumber(guessList,answerList);
         Integer rightPosition = countRightPosition(guessList,answerList);
@@ -56,9 +56,11 @@ public class GuessNumberGame {
 
     private Boolean isNumberRepeat(List<Integer> guessList){
         int count = (int) guessList.stream().distinct().count();
-        System.out.println(count);
         return count < guessList.size();
     }
 
+    private Boolean isNumberNot4(List<Integer> guessList){
+        return guessList.size()!=4;
+    }
 
 }
