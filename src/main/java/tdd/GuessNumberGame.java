@@ -10,14 +10,6 @@ public class GuessNumberGame {
         this.guessAnswer=answerGenerator.generate();
     }
 
-    public String getGuessAnswer() {
-        return guessAnswer;
-    }
-
-    public void setGuessAnswer(String guessAnswer) {
-        this.guessAnswer = guessAnswer;
-    }
-
     public String guess(String guessNumber){
         List<Integer> guessList = convertIntoList(guessNumber);
         List<Integer> answerList = convertIntoList(this.guessAnswer);
