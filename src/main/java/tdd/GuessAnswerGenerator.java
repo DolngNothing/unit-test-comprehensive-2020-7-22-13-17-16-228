@@ -20,11 +20,4 @@ public class GuessAnswerGenerator implements AnswerGenerator {
         }
         return answer.toString();
     }
-
-    public static void main(String[] args) {
-        GuessAnswerGenerator guessAnswerGenerator = new GuessAnswerGenerator();
-        for (int i = 0; i < 10; i++) {
-            System.out.println(guessAnswerGenerator.generate());
-        }
-    }
 }
