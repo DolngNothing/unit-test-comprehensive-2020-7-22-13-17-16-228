@@ -52,7 +52,7 @@ public class GuessNumberGame {
     public Integer countRightPosition(List<Integer> guessList,List<Integer> answerList){
         Integer count=0;
         for(int i=0;i<guessList.size();i++){
-            if(guessList.get(i)==answerList.get(i)){
+            if(guessList.get(i).equals(answerList.get(i))){
                 count++;
             }
         }
