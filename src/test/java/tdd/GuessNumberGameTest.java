@@ -9,6 +9,7 @@ import static org.mockito.BDDMockito.given;
 class GuessNumberGameTest {
     private static final String WRONG_INPUT_INPUT_AGAIN = "Wrong Input，Input again";
     private static final String ALL_CORRECT = "4A0B";
+    private static final String HALF_CORRECT_HALF_WRONG_POSITION = "2A2B";
 
     @Test
     void should_return_4A0B_when_answer_is_1234_given_1234(){
@@ -33,7 +34,7 @@ class GuessNumberGameTest {
         GuessNumberGame guessNumberGame = new GuessNumberGame(answerGenerator);
         String guessResult=guessNumberGame.guess(guessNumber);
         //should
-        assertEquals("2A2B",guessResult);
+        assertEquals(HALF_CORRECT_HALF_WRONG_POSITION,guessResult);
     }
 
     @Test
