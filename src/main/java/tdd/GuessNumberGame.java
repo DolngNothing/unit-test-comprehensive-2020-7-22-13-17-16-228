@@ -63,4 +63,8 @@ public class GuessNumberGame {
         return guessList.size()!=4;
     }
 
+    public String getGuessAnswer() {
+        return guessAnswer;
+    }
+
 }

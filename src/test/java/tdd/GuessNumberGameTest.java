@@ -125,4 +125,17 @@ class GuessNumberGameTest {
         //should
         assertEquals(WRONG_INPUT_INPUT_AGAIN,guessResult);
     }
+
+    @Test
+    void should_return_true_when_answer_is_designated_given_designated(){
+        //given
+        AnswerGenerator answerGenerator=new GuessAnswerGenerator();
+        GuessNumberGame guessNumberGame = new GuessNumberGame(answerGenerator);
+        String answer = guessNumberGame.getGuessAnswer();
+        //when
+
+        String guessResult=guessNumberGame.guess(answer);
+        //should
+        assertEquals("4A0B",guessResult);
+    }
 }
