@@ -9,7 +9,11 @@ import static org.mockito.BDDMockito.given;
 class GuessNumberGameTest {
     private static final String WRONG_INPUT_INPUT_AGAIN = "Wrong Input，Input again";
     private static final String ALL_CORRECT = "4A0B";
-    private static final String HALF_CORRECT_HALF_WRONG_POSITION = "2A2B";
+    private static final String SOME_CORRECT_POSITION_ALL_CORRECT_NUMBER = "2A2B";
+    private static final String ALL_WRONG_POSITION = "0A4B";
+    private static final String NONE_CORRECT_POSITION_SOME_CORRECT_NUMBER = "0A2B";
+    private static final String SOME_CORRECT_POSITION_SOME_CORRECT_NUMBER = "1A1B";
+    private static final String NONE_CORRECT = "0A0B";
 
     @Test
     void should_return_4A0B_when_answer_is_1234_given_1234(){
@@ -34,7 +38,7 @@ class GuessNumberGameTest {
         GuessNumberGame guessNumberGame = new GuessNumberGame(answerGenerator);
         String guessResult=guessNumberGame.guess(guessNumber);
         //should
-        assertEquals(HALF_CORRECT_HALF_WRONG_POSITION,guessResult);
+        assertEquals(SOME_CORRECT_POSITION_ALL_CORRECT_NUMBER,guessResult);
     }
 
     @Test
@@ -47,7 +51,7 @@ class GuessNumberGameTest {
         GuessNumberGame guessNumberGame = new GuessNumberGame(answerGenerator);
         String guessResult=guessNumberGame.guess(guessNumber);
         //should
-        assertEquals("0A4B",guessResult);
+        assertEquals(ALL_WRONG_POSITION,guessResult);
     }
 
     @Test
@@ -60,7 +64,7 @@ class GuessNumberGameTest {
         GuessNumberGame guessNumberGame = new GuessNumberGame(answerGenerator);
         String guessResult=guessNumberGame.guess(guessNumber);
         //should
-        assertEquals("1A1B",guessResult);
+        assertEquals(SOME_CORRECT_POSITION_SOME_CORRECT_NUMBER,guessResult);
     }
 
     @Test
@@ -73,7 +77,7 @@ class GuessNumberGameTest {
         GuessNumberGame guessNumberGame = new GuessNumberGame(answerGenerator);
         String guessResult=guessNumberGame.guess(guessNumber);
         //should
-        assertEquals("0A2B",guessResult);
+        assertEquals(NONE_CORRECT_POSITION_SOME_CORRECT_NUMBER,guessResult);
     }
 
     @Test
@@ -86,7 +90,7 @@ class GuessNumberGameTest {
         GuessNumberGame guessNumberGame = new GuessNumberGame(answerGenerator);
         String guessResult=guessNumberGame.guess(guessNumber);
         //should
-        assertEquals("0A0B",guessResult);
+        assertEquals(NONE_CORRECT,guessResult);
     }
 
     @Test
@@ -138,6 +142,6 @@ class GuessNumberGameTest {
 
         String guessResult=guessNumberGame.guess(answer);
         //should
-        assertEquals("4A0B",guessResult);
+        assertEquals(ALL_CORRECT,guessResult);
     }
 }
