@@ -112,4 +112,17 @@ class GuessNumberGameTest {
         //should
         assertEquals(WRONG_INPUT_INPUT_AGAIN,guessResult);
     }
+
+    @Test
+    void should_return_Wrong_Input_Input_again_when_answer_is_1234_given_12354(){
+        //given
+        String guessNumber="12354";
+        AnswerGenerator answerGenerator= Mockito.mock(AnswerGenerator.class);
+        given(answerGenerator.generate()).willReturn("1234");
+        //when
+        GuessNumberGame guessNumberGame = new GuessNumberGame(answerGenerator);
+        String guessResult=guessNumberGame.guess(guessNumber);
+        //should
+        assertEquals(WRONG_INPUT_INPUT_AGAIN,guessResult);
+    }
 }

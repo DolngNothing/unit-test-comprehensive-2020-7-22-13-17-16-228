@@ -54,9 +54,11 @@ public class GuessNumberGame {
         return count;
     }
 
-    private Boolean isNumberRepeatOrless(List<Integer> guessList){
-        long count = guessList.stream().distinct().count();
+    private Boolean isNumberRepeat(List<Integer> guessList){
+        int count = (int) guessList.stream().distinct().count();
+        System.out.println(count);
         return count < guessList.size();
     }
+
 
 }
